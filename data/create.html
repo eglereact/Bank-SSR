@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="http://bankas.test/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <title>Create new Account</title>
+  </head>
+  <body>
+    <main class="main-container">
+      <div class="users-container">
+        <div class="users">
+          {{NAV}}
+          <div class="card-container">
+            <div class="card">
+              <div class="card-top">
+                <h2>Create Bank Account</h2>
+              </div>
+              <form action="http://bankas.test/store" method="post">
+                <div class="inputs">
+                  <div class="input">
+                    <p>Account Holder Name</p>
+                    <input
+                      type="text"
+                      name="holderName"
+                      placeholder="Enter Name"
+                    />
+                  </div>
+                  <div class="input">
+                    <p>Account Holder Surname</p>
+                    <input
+                      type="text"
+                      name="holderSurname"
+                      placeholder="Enter Surname"
+                    />
+                  </div>
+                </div>
+                <div class="create-buttons">
+                  <button type="submit" class="account-submit-btn">
+                    Create Account
+                  </button>
+                  <a href="http://bankas.test/" class="account-cancel-btn">
+                    Cancel
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,301 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f3f6fc;
+}
+
+.main-container {
+  width: 100%;
+  background-color: #f3f6fc;
+}
+
+.list-container {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.create-btn {
+  background-color: #20b757;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 12px 36px;
+  border: none;
+  border: 1px solid #20b757;
+  font-size: 1rem;
+  display: flex;
+  gap: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+.create-btn:hover,
+.account-submit-btn:hover {
+  background-color: transparent;
+  color: #20b757;
+  border: 1px solid #20b757;
+  cursor: pointer;
+}
+
+.users {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+.user {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0 20px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-items {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 50px;
+}
+
+.total {
+  display: flex;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.total-amount {
+  border-right: 1px dashed #20b757;
+  padding-right: 20px;
+}
+
+.total-users {
+  padding-left: 20px;
+}
+
+.total-amount h3,
+.total-users h3 {
+  color: #404a60;
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.total-amount p,
+.total-users p {
+  color: #404a60;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.first {
+  background-color: #f5f8fe;
+}
+
+.user:nth-child(even) {
+  background-color: #f5f8fe;
+}
+
+.user-info {
+  display: flex;
+}
+
+.name,
+.surname,
+.amount {
+  width: 200px;
+  margin: 0;
+  margin-left: 20px;
+  color: #404a60;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.green,
+.red,
+.yellow {
+  border: none;
+  padding: 5px 30px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 1px solid #f0f0f0;
+  margin-left: 10px;
+}
+
+.green {
+  background-color: #e8f8ee;
+  color: #20b757;
+  border: 1px solid #20b757;
+}
+
+.green:hover {
+  background-color: #20b75798;
+  color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+.red {
+  background-color: #f6e9ee;
+  color: #fe7070;
+  border: 1px solid #fe7070;
+}
+
+.red:hover {
+  background-color: #f119199f;
+  color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+.yellow {
+  background-color: #f8f2e5;
+  color: #cd9b3f;
+  border: 1px solid #cd9b3f;
+}
+
+.yellow:hover {
+  background-color: #cd9b3f;
+  color: #ffffff;
+}
+
+.seed {
+  font-size: 16px;
+  color: #404a60;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border: 1px solid #ffffff;
+}
+
+.seed:hover {
+  background-color: transparent;
+  border: 1px solid #404a60;
+}
+
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: #ffffff;
+  min-width: 560px;
+  //   min-height: 500px;
+  border-radius: 10px;
+  justify-content: space-between;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px dashed #20b757;
+}
+
+.card-top h2 {
+  color: #404a60;
+  font-size: 28px;
+}
+
+.cancel-btn {
+  background-color: transparent;
+  font-size: 20px;
+  border: none;
+  color: #404a60;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+.input {
+  padding: 10px 20px;
+  margin: 10px 0;
+}
+
+.input p {
+  color: #404a60;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.input input {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 20px;
+  background-color: #f5f8fe;
+  border: none;
+  border: 1px solid #ebecef;
+  outline: none;
+  font-size: 16px;
+}
+
+.account-submit-btn,
+.account-cancel-btn {
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 12px 36px;
+  border: none;
+  font-size: 1rem;
+  margin: 20px;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  text-align: center;
+}
+
+.account-submit-btn {
+  background-color: #20b757;
+  border: 1px solid #20b757;
+}
+
+.account-cancel-btn {
+  background-color: #404a60;
+  border: 1px solid #404a60;
+}
+
+.account-cancel-btn:hover {
+  background-color: #ffffff;
+  color: #404a60;
+}
+
+.create-buttons {
+  display: flex;
+}
