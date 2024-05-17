@@ -134,10 +134,11 @@ body {
   margin-left: 20px;
   color: #404a60;
   font-size: 16px;
-  font-weight: 700;
   text-transform: capitalize;
 }
-
+.title {
+  font-weight: 700;
+}
 .green,
 .red,
 .yellow {
@@ -147,6 +148,7 @@ body {
   border-radius: 20px;
   border: 1px solid #f0f0f0;
   margin-left: 10px;
+  text-decoration: none;
 }
 
 .green {
@@ -216,7 +218,6 @@ body {
   width: 50%;
   background-color: #ffffff;
   min-width: 560px;
-  //   min-height: 500px;
   border-radius: 10px;
   justify-content: space-between;
 }
