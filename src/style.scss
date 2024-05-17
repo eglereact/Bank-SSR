@@ -247,6 +247,9 @@ body {
     font-size: 28px;
     font-weight: 700;
   }
+  .username {
+    text-transform: capitalize;
+  }
 }
 
 .cancel-btn {
@@ -257,6 +260,12 @@ body {
   cursor: pointer;
   width: 30px;
   height: 30px;
+}
+.inputs {
+  .how-much p {
+    font-size: 20px;
+    padding: 20px 0;
+  }
 }
 
 .input {

@@ -98,6 +98,72 @@ app.post("/destroy/:id", (req, res) => {
   res.redirect(302, "http://bankas.test/");
 });
 
+app.get("/deposit/:id", (req, res) => {
+  let html = fs.readFileSync("./data/deposit.html", "utf8");
+  let nav = fs.readFileSync("./data/nav.html", "utf8");
+  let data = fs.readFileSync("./data/users.json", "utf8");
+  data = JSON.parse(data);
+  const user = data.find((c) => c.id === req.params.id);
+  let totalSum = data.reduce((acc, item) => acc + item.amount, 0);
+  nav = nav
+    .replace("{{TOTALAMOUNT}}", totalSum)
+    .replace("{{TOTALUSERS}}", data.length);
+  html = html
+    .replace("{{NAV}}", nav)
+    .replace("{{USERNAME}}", `${user.holderName} ${user.holderSurname}`)
+    .replace("{{ID}}", user.id);
+  res.send(html);
+});
+
+app.post("/add/:id", (req, res) => {
+  const newAmount = parseFloat(req.body.depositAmount);
+  let data = fs.readFileSync("./data/users.json", "utf8");
+  data = JSON.parse(data);
+  const userIndex = data.findIndex((u) => u.id === req.params.id);
+
+  if (userIndex !== -1) {
+    data[userIndex].amount += newAmount;
+    data = JSON.stringify(data);
+    fs.writeFileSync("./data/users.json", data);
+    res.redirect(302, "http://bankas.test/");
+  } else {
+    res.status(404).send("User not found");
+  }
+});
+
+app.get("/withdraw/:id", (req, res) => {
+  let html = fs.readFileSync("./data/withdraw.html", "utf8");
+  let nav = fs.readFileSync("./data/nav.html", "utf8");
+  let data = fs.readFileSync("./data/users.json", "utf8");
+  data = JSON.parse(data);
+  const user = data.find((c) => c.id === req.params.id);
+  let totalSum = data.reduce((acc, item) => acc + item.amount, 0);
+  nav = nav
+    .replace("{{TOTALAMOUNT}}", totalSum)
+    .replace("{{TOTALUSERS}}", data.length);
+  html = html
+    .replace("{{NAV}}", nav)
+    .replace("{{USERNAME}}", `${user.holderName} ${user.holderSurname}`)
+    .replace("{{ID}}", user.id);
+  res.send(html);
+});
+
+app.post("/remove/:id", (req, res) => {
+  const newAmount = parseFloat(req.body.depositAmount);
+  let data = fs.readFileSync("./data/users.json", "utf8");
+  data = JSON.parse(data);
+  const userIndex = data.findIndex((u) => u.id === req.params.id);
+
+  if (userIndex !== -1) {
+    data[userIndex].amount -= newAmount;
+    data = JSON.stringify(data);
+    fs.writeFileSync("./data/users.json", data);
+    res.redirect(302, "http://bankas.test/");
+  } else {
+    res.status(404).send("User not found");
+  }
+});
+
 app.listen(port, () => {
   console.log(`Bank SSR listening on port ${port}`);
 });

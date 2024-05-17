@@ -254,6 +254,9 @@ body {
   font-size: 28px;
   font-weight: 700;
 }
+.card-top .username {
+  text-transform: capitalize;
+}
 
 .cancel-btn {
   background-color: transparent;
@@ -263,6 +266,11 @@ body {
   cursor: pointer;
   width: 30px;
   height: 30px;
+}
+
+.inputs .how-much p {
+  font-size: 20px;
+  padding: 20px 0;
 }
 
 .input {
