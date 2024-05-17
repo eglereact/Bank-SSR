@@ -71,6 +71,33 @@ app.post("/store", (req, res) => {
   res.redirect(302, "http://bankas.test/");
 });
 
+app.get("/delete/:id", (req, res) => {
+  let html = fs.readFileSync("./data/delete.html", "utf8");
+  let nav = fs.readFileSync("./data/nav.html", "utf8");
+  let data = fs.readFileSync("./data/users.json", "utf8");
+  data = JSON.parse(data);
+  const user = data.find((c) => c.id === req.params.id);
+  let totalSum = data.reduce((acc, item) => acc + item.amount, 0);
+  nav = nav
+    .replace("{{TOTALAMOUNT}}", totalSum)
+    .replace("{{TOTALUSERS}}", data.length);
+  html = html
+    .replace("{{NAV}}", nav)
+    .replace("{{USERNAME}}", `${user.holderName} ${user.holderSurname}`)
+    .replace("{{ID}}", user.id);
+  res.send(html);
+});
+
+app.post("/destroy/:id", (req, res) => {
+  let data = fs.readFileSync("./data/users.json", "utf8");
+  data = JSON.parse(data);
+  data = data.filter((u) => u.id !== req.params.id);
+  data = JSON.stringify(data);
+  fs.writeFileSync("./data/users.json", data);
+  console.log(req.params.id);
+  res.redirect(302, "http://bankas.test/");
+});
+
 app.listen(port, () => {
   console.log(`Bank SSR listening on port ${port}`);
 });

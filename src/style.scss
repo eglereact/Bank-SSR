@@ -220,6 +220,20 @@ body {
   min-width: 560px;
   border-radius: 10px;
   justify-content: space-between;
+  .delete-question {
+    font-size: 20px;
+    color: #404a60;
+    padding: 30px 0;
+    padding-left: 20px;
+    .delete-span {
+      color: #fe7070;
+      font-weight: 700;
+    }
+    .user-name {
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+  }
 }
 
 .card-top {
@@ -228,11 +242,11 @@ body {
   align-items: center;
   padding: 20px;
   border-bottom: 1px dashed #20b757;
-}
-
-.card-top h2 {
-  color: #404a60;
-  font-size: 28px;
+  h2 {
+    color: #404a60;
+    font-size: 28px;
+    font-weight: 700;
+  }
 }
 
 .cancel-btn {
@@ -269,7 +283,8 @@ body {
 }
 
 .account-submit-btn,
-.account-cancel-btn {
+.account-cancel-btn,
+.account-delete-btn {
   text-decoration: none;
   color: #ffffff;
   border-radius: 20px;
@@ -280,6 +295,16 @@ body {
   transition: all 0.3s ease-in-out;
   width: 100%;
   text-align: center;
+}
+
+.account-delete-btn {
+  background-color: #fe7070;
+  border: 1px solid #fe7070;
+}
+
+.account-delete-btn:hover {
+  background-color: #ffffff;
+  color: #fe7070;
 }
 
 .account-submit-btn {
