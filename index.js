@@ -40,7 +40,7 @@ const showMessage = (id) => {
   delete session.d.msg;
   data = JSON.stringify(data);
   fs.writeFileSync("./data/sessions.json", data);
-  return `<div class="mt-3 ms-5 me-5 alert  alert-${type}" role="alert">  ${text}</div>`;
+  return `<div class="mt-3 ms-5 me-5 alert  alert-${type} --alert" role="alert">  ${text}</div>`;
 };
 
 app.use((req, res, next) => {
